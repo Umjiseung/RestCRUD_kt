@@ -15,6 +15,7 @@ class BoardServiceImpl(
     @Transactional(rollbackOn = [Exception::class])
     override fun boardWrite(boardWriteRequest: BoardWriteRequest) {
         val board = Board(
+            id = 0L,
             title = boardWriteRequest.title,
             content = boardWriteRequest.content,
             category = boardWriteRequest.category
