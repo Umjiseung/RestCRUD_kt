@@ -4,7 +4,7 @@ import jakarta.persistence.*
 import org.example.gomstest.data.enums.Major
 
 @Entity
-data class Board(
+class Board(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
