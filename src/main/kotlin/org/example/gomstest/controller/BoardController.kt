@@ -1,5 +1,6 @@
 package org.example.gomstest.controller
 
+import jakarta.validation.Valid
 import org.example.gomstest.data.dto.request.BoardWriteRequest
 import org.example.gomstest.service.BoardService
 import org.springframework.http.ResponseEntity
@@ -15,7 +16,7 @@ class BoardController(
 ) {
 
     @PostMapping
-    fun boardWrite(@RequestBody writeRequest: BoardWriteRequest): ResponseEntity<Void> {
+    fun boardWrite(@Valid @RequestBody writeRequest: BoardWriteRequest): ResponseEntity<Void> {
         boardService.boardWrite(writeRequest)
         return ResponseEntity.ok().build()
     }
