@@ -25,8 +25,10 @@ class BoardServiceImpl(
     }
 
     override fun boardGets(): List<BoardGetsResponse> =
-        boardRepository.findAll()
-            .map { BoardGetsResponse(it) }
+        boardRepository.findAll().let { boards ->
+            boards.map { BoardGetsResponse(it) }
+        }
+
 
 
 }
