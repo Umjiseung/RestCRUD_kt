@@ -24,9 +24,7 @@ class BoardController(
     }
 
     @GetMapping
-    fun boardGets(): ResponseEntity<List<BoardGetsResponse>> {
-        val result = boardService.boardGets()
-        return ResponseEntity.ok(result)
-    }
-
+    fun boardGets(): ResponseEntity<List<BoardGetsResponse>> =
+        boardService.boardGets()
+            .let { ResponseEntity.ok(it) }
 }
