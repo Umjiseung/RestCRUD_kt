@@ -2,10 +2,12 @@ package org.example.gomstest.service.impl
 
 import jakarta.transaction.Transactional
 import org.example.gomstest.data.dto.request.BoardWriteRequest
+import org.example.gomstest.data.dto.response.BoardGetResponse
 import org.example.gomstest.data.dto.response.BoardGetsResponse
 import org.example.gomstest.data.entity.Board
 import org.example.gomstest.repository.BoardRepository
 import org.example.gomstest.service.BoardService
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
 @Service
@@ -28,5 +30,11 @@ class BoardServiceImpl(
         boardRepository.findAll()
             .map { BoardGetsResponse(it) }
 
+    override fun boardGet(id: Long): BoardGetResponse {
+        val board = boardRepository.findByIdOrNull(id)
+            ?:throw RuntimeException()
+
+        return BoardGetResponse(board)
+    }
 
 }
