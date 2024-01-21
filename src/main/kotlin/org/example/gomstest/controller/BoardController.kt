@@ -38,7 +38,7 @@ class BoardController(
             .let { ResponseEntity.ok(it) }
 
     @PatchMapping("/{id}")
-    fun boardUpdate(@PathVariable id: Long,@RequestBody boardUpdateRequest: BoardUpdateRequest): ResponseEntity<Void> {
+    fun boardUpdate(@PathVariable id: Long, @Valid @RequestBody boardUpdateRequest: BoardUpdateRequest): ResponseEntity<Void> {
         boardService.boardUpdate(id, boardUpdateRequest)
         return ResponseEntity.ok().build()
     }

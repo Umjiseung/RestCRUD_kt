@@ -16,8 +16,8 @@ data class BoardUpdateRequest(
     fun toEntity(board: Board): Board =
         Board(
             id = board.id,
-            title = board.title,
-            content = board.content,
-            category = board.category
+            title = title,
+            content = content,
+            category = category
         )
 }
