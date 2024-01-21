@@ -6,6 +6,7 @@ import org.example.gomstest.domain.board.data.dto.request.BoardWriteRequest
 import org.example.gomstest.domain.board.data.dto.response.BoardGetResponse
 import org.example.gomstest.domain.board.data.dto.response.BoardGetsResponse
 import org.example.gomstest.domain.board.data.entity.Board
+import org.example.gomstest.domain.board.exception.BoardNotFoundException
 import org.example.gomstest.domain.board.repository.BoardRepository
 import org.example.gomstest.domain.board.service.BoardService
 import org.springframework.data.repository.findByIdOrNull
@@ -33,14 +34,14 @@ class BoardServiceImpl(
 
     override fun boardGet(id: Long): BoardGetResponse {
         val board = boardRepository.findByIdOrNull(id)
-            ?:throw RuntimeException()
+            ?:throw BoardNotFoundException()
 
         return BoardGetResponse(board)
     }
 
     override fun boardUpdate(id: Long, boardUpdateRequest: BoardUpdateRequest) {
         val board = boardRepository.findByIdOrNull(id)
-            ?:throw RuntimeException()
+            ?:throw BoardNotFoundException()
 
         boardRepository.save(boardUpdateRequest.toEntity(board))
     }
