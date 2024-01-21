@@ -1,12 +1,14 @@
 package org.example.gomstest.controller
 
 import jakarta.validation.Valid
+import org.example.gomstest.data.dto.request.BoardUpdateRequest
 import org.example.gomstest.data.dto.request.BoardWriteRequest
 import org.example.gomstest.data.dto.response.BoardGetResponse
 import org.example.gomstest.data.dto.response.BoardGetsResponse
 import org.example.gomstest.service.BoardService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -34,5 +36,11 @@ class BoardController(
     fun boardGets(@PathVariable id: Long): ResponseEntity<BoardGetResponse> =
         boardService.boardGet(id)
             .let { ResponseEntity.ok(it) }
+
+    @PatchMapping("/{id}")
+    fun boardUpdate(@PathVariable id: Long,@RequestBody boardUpdateRequest: BoardUpdateRequest): ResponseEntity<Void> {
+        boardService.boardUpdate(id, boardUpdateRequest)
+        return ResponseEntity.ok().build()
+    }
 
 }

@@ -1,6 +1,7 @@
 package org.example.gomstest.service.impl
 
 import jakarta.transaction.Transactional
+import org.example.gomstest.data.dto.request.BoardUpdateRequest
 import org.example.gomstest.data.dto.request.BoardWriteRequest
 import org.example.gomstest.data.dto.response.BoardGetResponse
 import org.example.gomstest.data.dto.response.BoardGetsResponse
@@ -35,6 +36,13 @@ class BoardServiceImpl(
             ?:throw RuntimeException()
 
         return BoardGetResponse(board)
+    }
+
+    override fun boardUpdate(id: Long, boardUpdateRequest: BoardUpdateRequest) {
+        val board = boardRepository.findByIdOrNull(id)
+            ?:throw RuntimeException()
+
+        boardRepository.save(boardUpdateRequest.toEntity(board))
     }
 
 }
