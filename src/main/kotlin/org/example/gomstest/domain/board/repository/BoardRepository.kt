@@ -1,6 +1,6 @@
-package org.example.gomstest.repository
+package org.example.gomstest.domain.board.repository
 
-import org.example.gomstest.data.entity.Board
+import org.example.gomstest.domain.board.data.entity.Board
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface BoardRepository: JpaRepository<Board,Long> {

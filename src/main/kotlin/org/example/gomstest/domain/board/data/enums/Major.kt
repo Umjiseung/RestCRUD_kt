@@ -1,4 +1,4 @@
-package org.example.gomstest.data.enums
+package org.example.gomstest.domain.board.data.enums
 
 enum class Major {
     BACKEND,

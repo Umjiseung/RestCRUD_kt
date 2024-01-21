@@ -1,13 +1,13 @@
-package org.example.gomstest.service.impl
+package org.example.gomstest.domain.board.service.impl
 
 import jakarta.transaction.Transactional
-import org.example.gomstest.data.dto.request.BoardUpdateRequest
-import org.example.gomstest.data.dto.request.BoardWriteRequest
-import org.example.gomstest.data.dto.response.BoardGetResponse
-import org.example.gomstest.data.dto.response.BoardGetsResponse
-import org.example.gomstest.data.entity.Board
-import org.example.gomstest.repository.BoardRepository
-import org.example.gomstest.service.BoardService
+import org.example.gomstest.domain.board.data.dto.request.BoardUpdateRequest
+import org.example.gomstest.domain.board.data.dto.request.BoardWriteRequest
+import org.example.gomstest.domain.board.data.dto.response.BoardGetResponse
+import org.example.gomstest.domain.board.data.dto.response.BoardGetsResponse
+import org.example.gomstest.domain.board.data.entity.Board
+import org.example.gomstest.domain.board.repository.BoardRepository
+import org.example.gomstest.domain.board.service.BoardService
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 

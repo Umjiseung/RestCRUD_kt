@@ -1,7 +1,7 @@
-package org.example.gomstest.data.dto.response
+package org.example.gomstest.domain.board.data.dto.response
 
-import org.example.gomstest.data.entity.Board
-import org.example.gomstest.data.enums.Major
+import org.example.gomstest.domain.board.data.entity.Board
+import org.example.gomstest.domain.board.data.enums.Major
 
 data class BoardGetResponse (
     val title: String,
