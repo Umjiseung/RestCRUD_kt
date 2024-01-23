@@ -1,7 +1,7 @@
-package org.example.gomstest.data.entity
+package org.example.gomstest.domain.board.data.entity
 
 import jakarta.persistence.*
-import org.example.gomstest.data.enums.Major
+import org.example.gomstest.domain.board.data.enums.Major
 
 
 @Entity

@@ -1,8 +1,8 @@
-package org.example.gomstest.data.dto.request
+package org.example.gomstest.domain.board.data.dto.request
 
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
-import org.example.gomstest.data.enums.Major
+import org.example.gomstest.domain.board.data.enums.Major
 
 data class BoardWriteRequest (
     @field:NotBlank

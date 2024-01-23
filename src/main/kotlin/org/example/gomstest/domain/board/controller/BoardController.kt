@@ -1,11 +1,11 @@
-package org.example.gomstest.controller
+package org.example.gomstest.domain.board.controller
 
 import jakarta.validation.Valid
-import org.example.gomstest.data.dto.request.BoardUpdateRequest
-import org.example.gomstest.data.dto.request.BoardWriteRequest
-import org.example.gomstest.data.dto.response.BoardGetResponse
-import org.example.gomstest.data.dto.response.BoardGetsResponse
-import org.example.gomstest.service.BoardService
+import org.example.gomstest.domain.board.data.dto.request.BoardUpdateRequest
+import org.example.gomstest.domain.board.data.dto.request.BoardWriteRequest
+import org.example.gomstest.domain.board.data.dto.response.BoardGetResponse
+import org.example.gomstest.domain.board.data.dto.response.BoardGetsResponse
+import org.example.gomstest.domain.board.service.BoardService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
