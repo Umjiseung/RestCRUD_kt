@@ -41,7 +41,7 @@ class BoardController(
     @PatchMapping("/{id}")
     fun boardUpdate(@PathVariable id: Long, @Valid @RequestBody boardUpdateRequest: BoardUpdateRequest): ResponseEntity<Void> {
         boardService.boardUpdate(id, boardUpdateRequest)
-        return ResponseEntity.ok().build()
+        return ResponseEntity.noContent().build()
     }
 
     @DeleteMapping("/{id}")
