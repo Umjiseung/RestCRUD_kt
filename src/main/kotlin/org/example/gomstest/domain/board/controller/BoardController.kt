@@ -47,7 +47,7 @@ class BoardController(
     @DeleteMapping("/{id}")
     fun boardDelete(@PathVariable id: Long): ResponseEntity<Void> {
         boardService.boardDelete(id)
-        return ResponseEntity.ok().build()
+        return ResponseEntity.noContent().build()
     }
 
 }
