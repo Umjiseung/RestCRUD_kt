@@ -46,4 +46,10 @@ class BoardServiceImpl(
         boardRepository.save(boardUpdateRequest.toEntity(board))
     }
 
+    override fun boardDelete(id: Long) {
+        val board = boardRepository.findByIdOrNull(id)
+            ?:throw BoardNotFoundException()
+
+        boardRepository.delete(board)
+    }
 }

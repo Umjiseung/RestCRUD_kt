@@ -7,6 +7,7 @@ import org.example.gomstest.domain.board.data.dto.response.BoardGetResponse
 import org.example.gomstest.domain.board.data.dto.response.BoardGetsResponse
 import org.example.gomstest.domain.board.service.BoardService
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -40,6 +41,12 @@ class BoardController(
     @PatchMapping("/{id}")
     fun boardUpdate(@PathVariable id: Long, @Valid @RequestBody boardUpdateRequest: BoardUpdateRequest): ResponseEntity<Void> {
         boardService.boardUpdate(id, boardUpdateRequest)
+        return ResponseEntity.ok().build()
+    }
+
+    @DeleteMapping("/{id}")
+    fun boardDelete(@PathVariable id: Long): ResponseEntity<Void> {
+        boardService.boardDelete(id)
         return ResponseEntity.ok().build()
     }
 

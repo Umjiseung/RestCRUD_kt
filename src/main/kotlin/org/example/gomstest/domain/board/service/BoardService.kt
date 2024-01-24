@@ -10,4 +10,5 @@ interface BoardService {
     fun boardGets(): List<BoardGetsResponse>
     fun boardGet(id: Long): BoardGetResponse
     fun boardUpdate(id: Long, boardUpdateRequest: BoardUpdateRequest)
+    fun boardDelete(id: Long)
 }
